@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  font-family: Arial;
+  align-items: center;
+  justify-content: center;
+}
+
+.site__title {
+  font-size: 100px;
+  width: 50%;
+  text-align: center;
+}
+
+.site__title-text {
+  background: #000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
