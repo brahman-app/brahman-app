@@ -1,3 +1,4 @@
-(ns oxr463.brahman-pasture-calculator)
+(ns ^:figwheel-hooks oxr463.brahman-pasture-calculator)
 
-(js/console.log "Moo!")
+(defn ^:after-load re-render[]
+ (js/console.log "Moo!")
