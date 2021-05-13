@@ -1,0 +1,19 @@
+name: lein
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use oxr463/setup-leiningen
+      uses: oxr463/setup-leiningen@0.0.1
+      with:
+        exec: |
+          lein uberjar && \
+          cp "$(find . -name '*.jar')" .
