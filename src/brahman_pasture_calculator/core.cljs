@@ -8,19 +8,19 @@
     (assoc data :avg-weight (/ (+ min-weight max-weight) 2)))
 
 ;; Define Animal Unit (AU)
-(def au 1000)
+(def animal-unit 1000)
 
 ;; Calculate Animal Unit Equivalent (AUE)
 (defn calc-aue [avg-weight]
-    (/ avg-weight au))
+    (/ avg-weight animal-unit))
 
 ;; Calculate Total Animal Units (AU)
-(defn calc-total-au [herd-size aue]
-  (* herd-size aue))
+(defn calc-total-au [herd-size animal-unit-equivalent]
+  (* herd-size animal-unit-equivalent))
 
 ;; Calculate Pasture Size
-(defn calc-pasture-size [aus grazing-time stocking-rate]
-  (/ (* aus grazing-time) stocking-rate))
+(defn calc-pasture-size [animal-units grazing-time stocking-rate]
+  (/ (* animal-units grazing-time) stocking-rate))
 
 ;; Typical weight of a Bull
 (def bull-data (r/atom (calc-avg-weight {:min-weight 1600 :max-weight 2200})))
