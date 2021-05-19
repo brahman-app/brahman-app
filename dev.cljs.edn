@@ -1,3 +1,3 @@
 ^{:watch-dirs ["src"]
   :css-dirs   ["res"]}
-{:main oxr463.brahman-pasture-calculator}
+{:main brahman-pasture-calculator.core}
