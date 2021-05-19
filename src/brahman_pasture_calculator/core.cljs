@@ -7,9 +7,11 @@
 (defn calc-avg-weight [{:keys [min-weight max-weight] :as data}]
     (assoc data :avg-weight (/ (+ min-weight max-weight) 2)))
 
+;; Define Animal Unit (AU)
+(def au 1000)
+
 ;; Calculate Animal Unit Equivalent (AUE)
 (defn calc-aue [avg-weight]
-  (def au 1000)
     (/ avg-weight au))
 
 ;; Calculate Total Animal Units (AU)
