@@ -3,8 +3,6 @@ services:
   brahman-app:
     container_name: brahman-app
     hostname: brahman-app
-    build: .
-    #image: clojure:lein-alpine
     image: clojure:latest
     volumes:
       - ~/src/brahman-pasture-calculator:/usr/src/brahman-pasture-calculator
