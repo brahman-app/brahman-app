@@ -4,29 +4,29 @@
     [reagent.dom :as r.dom]))
 
 ;; Calculate average weight of the cattle
-(defn calc-avg-weight [{:keys [min-weight max-weight] :as data}]
-    (assoc data :avg-weight (/ (+ min-weight max-weight) 2)))
+(defn calc-avg-weight [min-weight max-weight]
+    (/ (+ min-weight max-weight) 2))
 
 ;; Define Animal Unit (AU)
 (def animal-unit 1000)
 
+;; Average weight of a Bull
+(def bull-weight (r/atom (calc-avg-weight 1600 2200)))
+
+;; Average weight of a Cow
+(def cow-weight (r/atom (calc-avg-weight 1000 1400)))
+
 ;; Calculate Animal Unit Equivalent (AUE)
-(defn calc-aue [avg-weight]
+(defn calc-animal-unit-equivalent [avg-weight]
     (/ avg-weight animal-unit))
 
 ;; Calculate Total Animal Units (AU)
-(defn calc-total-au [herd-size animal-unit-equivalent]
+(defn calc-total-animal-units [herd-size animal-unit-equivalent]
   (* herd-size animal-unit-equivalent))
 
 ;; Calculate Pasture Size
-(defn calc-pasture-size [animal-units grazing-time stocking-rate]
-  (/ (* animal-units grazing-time) stocking-rate))
-
-;; Typical weight of a Bull
-(def bull-data (r/atom (calc-avg-weight {:min-weight 1600 :max-weight 2200})))
-
-;; Typical weight of a Cow
-(def cow-data (r/atom (calc-avg-weight {:min-weight 1000 :max-weight 1400})))
+(defn calc-pasture-size [animal-units grazing-season stocking-rate]
+  (/ (* animal-units grazing-season) stocking-rate))
 
 (defn app []
   [:h1.site__title

@@ -6,6 +6,7 @@ services:
     image: clojure:latest
     volumes:
       - ~/src/brahman-pasture-calculator:/usr/src/brahman-pasture-calculator
+    working_dir: /usr/src/brahman-pasture-calculator
     ports:
       - "9500:9500"
 
