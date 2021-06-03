@@ -1,22 +1,7 @@
-{:paths
- ["res" "src" "target"]
-
- :deps
- {org.clojure/clojurescript {:mvn/version "1.10.844"}
-
-  com.bhauman/figwheel-main {:mvn/version "0.2.13"}
-
-  reagent/reagent           {:mvn/version "0.10.0"}
-
-  thheller/shadow-cljs      {:mvn/version "2.13.0"}}
-
- :aliases
- {:dev {:main-opts ["-m"          "figwheel.main"
-                    "--build"     "dev"
-                    "--repl"
-                    "--repl-opts" "{:launch-browser false}"]}}
-
- {:test {:main-opts ["-m"  "figwheel.main"
-                     "-co" "test.cljs.edn"
-                     "-m"  "brahman-pasture-calculator.test-runner"]}}}
+{:deps {io.vouch/krell {:git/url "https://github.com/vouch-opensource/krell.git"
+                        :sha "08f2bfea96aa48feb8511851e37f5948453986e5"}
+        io.vouch/reagent-react-native {:git/url "https://github.com/vouch-opensource/reagent-react-native.git"
+                                       :sha "0fe1c600c9b81180f76b94ef6004c2f85e7d4aa0"}
+        reagent/reagent {:mvn/version "0.10.0"
+                         :exclusions [cljsjs/react cljsjs/react-dom]}}}
 

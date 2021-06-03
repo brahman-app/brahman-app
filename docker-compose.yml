@@ -3,10 +3,11 @@ services:
   brahman-app:
     container_name: brahman-app
     hostname: brahman-app
-    image: clojure:latest
+    image: brahman-app/sdk
+    build: .
     volumes:
-      - ~/src/brahman-pasture-calculator:/usr/src/brahman-pasture-calculator
-    working_dir: /usr/src/brahman-pasture-calculator
+      - ~/src/brahman-app:/usr/src/brahman-app
+    working_dir: /usr/src/brahman-app
     ports:
       - "9500:9500"
 

@@ -2,4 +2,4 @@
   :css-dirs   ["res"]
   :auto-testing true
    }
-{:main brahman-pasture-calculator.core}
+{:main brahman-app.core}
