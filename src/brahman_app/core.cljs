@@ -1,7 +1,7 @@
-(ns ^:figwheel-hooks brahman-pasture-calculator.core
+(ns brahman-app.core
   (:require
     [reagent.core :as r]
-    [reagent.dom :as r.dom]))
+    [reagent.react-native :as rn]))
 
 ;; Calculate average weight of the cattle
 (defn calc-avg-weight [min-weight max-weight]
@@ -28,14 +28,19 @@
 (defn calc-pasture-size [animal-units grazing-season stocking-rate]
   (/ (* animal-units grazing-season) stocking-rate))
 
-(defn app []
-  [:h1.site__title
-    [:span.site__title-text "Brahman Pasture Calculator"]])
+;;(let [bulls 50
+;;      cows  50]
+;;  (defn brahman-app []
+;;    [:div
+;;      [:h3 "Pasture Calculator"]
+;;      [:div
+;;        "Bulls: " (int bulls) "Cows: " (int cows)
+;;       [:input {:type "range" :min 0 :max 255}]]]))
 
-(defn mount []
-  (r.dom/render [app] (js/document.getElementById "root")))
+(defn brahman-app[]
+  [rn/view {:style {:flex 1 :align-items "center" :justify-content "center"}}
+   [rn/text {:style {:font-size 50}} "Pasture Calculator"]])
 
-(defn ^:after-load re-render []
-  (mount))
+(defn ^:export -main [& args]
+  (r/as-element [brahman-app]))
 
-(defonce start-up (do (mount) true))
