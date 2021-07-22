@@ -1,6 +1,7 @@
 (ns brahman-app.core
   (:require
     [reagent.core :as r]
+    [reagent.dom :as rdom]
     [reagent.react-native :as rn]))
 
 ;; Calculate average weight of the cattle
